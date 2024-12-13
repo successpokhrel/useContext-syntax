@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import Dashboard from './Dashboard';
+import { DashboardContext } from './context';
 
 export interface User {
   isSubscribed: boolean;
@@ -16,7 +17,9 @@ function App({}: AppProps) {
 
   return (
     <div>
-      <Dashboard user={user}/>
+      <DashboardContext.Provider value={user}>
+        <Dashboard/>
+      </DashboardContext.Provider>
     </div>
   )
 }

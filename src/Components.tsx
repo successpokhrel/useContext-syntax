@@ -1,24 +1,19 @@
-import { User } from "./App";
 
-interface SidebarProps{
-    user: User
-}
+interface SidebarProps{}
 
-export function Sidebar({user}: SidebarProps){
+export function Sidebar({}: SidebarProps){
     return(
         <div>
-            <div>{user.name}</div>
-            <div>Subscription Status: {user.isSubscribed? "True":"False"}</div>
+            <div>{}</div>
+            <div>Subscription Status: {}</div>
         </div>
     )
 }
 
-interface ProfileProps {
-    user: User;
-}
+interface ProfileProps {}
 
-export function Profile({user}: ProfileProps){
+export function Profile({}: ProfileProps){
     return (
-        <div>{user.name}</div>
+        <div>{}</div>
     )
 }
