@@ -1,16 +1,15 @@
-import { useContext } from "react"
-import { DashboardContext } from "./context"
+import {  useUserContext } from "./context"
 
 interface SidebarProps{}
 
 export function Sidebar({}: SidebarProps){
 
-    const user = useContext(DashboardContext);
+    const user = useUserContext();
 
     return(
         <div>
-            <div>{user?.name}</div>
-            <div>Subscription Status: {user?.isSubscribed?"True":"False"}</div>
+            <div>{user.name}</div>
+            <div>Subscription Status: {user.isSubscribed?"True":"False"}</div>
         </div>
     )
 }
@@ -18,8 +17,8 @@ export function Sidebar({}: SidebarProps){
 interface ProfileProps {}
 
 export function Profile({}: ProfileProps){
-    const user = useContext(DashboardContext);
+    const user = useUserContext();
     return (
-        <div>{user?.name}</div>
+        <div>{user.name}</div>
     )
 }
